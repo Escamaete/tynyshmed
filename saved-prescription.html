@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сақталған Рецепттер</title>
+    <link rel="stylesheet" href="saved-prescription.css">
+</head>
+<body>
+    <header>
+        <button class="back-button" onclick="window.history.back()">Артқа</button>
+    </header>
+    <main>
+        <div class="table-wrapper">
+            <table id="prescriptions-table">
+                <thead>
+                    <tr>
+                        <th>Пациенттің аты-жөні</th>
+                        <th>Дәрі-дәрмек</th>
+                        <th>Дозасы</th>
+                        <th>Қолдану нұсқаулығы</th>
+                        <th>Берілген күні</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Сақталған деректер JavaScript арқылы қосылады -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const tableBody = document.querySelector("#prescriptions-table tbody");
+
+            // LocalStorage-тен деректерді жүктеу
+            const prescriptions = JSON.parse(localStorage.getItem("prescriptions")) || [];
+
+            // Егер деректер бар болса, оларды кестеге қосу
+            if (prescriptions.length > 0) {
+                prescriptions.forEach(prescription => {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                        <td>${prescription.patientName}</td>
+                        <td>${prescription.medication}</td>
+                        <td>${prescription.dosage}</td>
+                        <td>${prescription.instructions}</td>
+                        <td>${prescription.issueDate}</td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            } else {
+                // Егер деректер жоқ болса, хабарлама көрсету
+                const row = document.createElement("tr");
+                row.innerHTML = `<td colspan="5" style="text-align: center;">Сақталған рецепттер жоқ</td>`;
+                tableBody.appendChild(row);
+            }
+        });
+    </script>
+</body>
+</html>

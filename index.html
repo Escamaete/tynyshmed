@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Емхана жүйесі</title>
+</head>
+<body>
+    <header>
+        <h1>Емхана жүйесі</h1>
+    </header>
+    <main>
+        <!-- Секция регистрации в клинике -->
+        <section>
+            <h2>Емханаға тіркелу</h2>
+            <form id="clinicRegForm">
+                <input type="text" id="clinicName" placeholder="Емхана атауы" required>
+                <input type="text" id="location" placeholder="Орналасқан жері" required>
+                <button type="button" onclick="saveClinicReg()">Сақтау</button>
+            </form>
+        </section>
+
+        <!-- Секция для справок -->
+        <section>
+            <h2>Анықтама жазу</h2>
+            <form id="certificatesForm">
+                <input type="text" id="certificateType" placeholder="Анықтама түрі" required>
+                <input type="date" id="issueDate" required>
+                <textarea id="doctorNotes" placeholder="Ескертпелер"></textarea>
+                <button type="button" onclick="saveCertificate()">Сақтау</button>
+            </form>
+        </section>
+
+        <!-- Секция для врачей -->
+        <section>
+            <h2>Дәрігерді қосу</h2>
+            <form id="doctorForm">
+                <input type="text" id="doctorName" placeholder="Дәрігердің аты-жөні" required>
+                <input type="text" id="specialty" placeholder="Мамандығы" required>
+                <button type="button" onclick="saveDoctor()">Сақтау</button>
+            </form>
+        </section>
+
+        <!-- Секция для истории болезни -->
+        <section>
+            <h2>Ауру тарихын толтыру</h2>
+            <form id="medicalHistoryForm">
+                <input type="text" id="patientName" placeholder="Пациенттің аты" required>
+                <textarea id="medicalHistory" placeholder="Ауру тарихы"></textarea>
+                <button type="button" onclick="saveMedicalHistory()">Сақтау</button>
+            </form>
+        </section>
+
+        <!-- Секция для рецептов -->
+        <section>
+            <h2>Рецепт жазу</h2>
+            <form id="prescriptionsForm">
+                <input type="text" id="medicationName" placeholder="Дәрінің атауы" required>
+                <input type="text" id="dosage" placeholder="Дозировка" required>
+                <button type="button" onclick="savePrescription()">Сақтау</button>
+            </form>
+        </section>
+    </main>
+    <script src="scripts.js"></script>
+</body>
+</html>

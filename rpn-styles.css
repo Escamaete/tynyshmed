@@ -1,0 +1,164 @@
+/* Основной стиль для body */
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  background: linear-gradient(135deg, #1d3557, #457b9d, #a8dadc);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* Анимация фона */
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Контейнер */
+.container {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.95); /* Светлый фон */
+  border-radius: 15px; /* Круглые углы */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 -5px 20px rgba(255, 255, 255, 0.1); /* Глубокая тень */
+  animation: fadeIn 1s ease-in-out; /* Анимация появления */
+}
+
+/* Анимация появления */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Секция поиска */
+.search-section {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+input {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 300px;
+  font-size: 16px;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #457b9d;
+  box-shadow: 0 0 8px rgba(69, 123, 157, 0.5);
+  outline: none;
+}
+
+button {
+  padding: 12px 20px;
+  background-color: #1d3557;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background-color: #457b9d;
+  transform: scale(1.05); /* Легкое увеличение */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Таблица */
+#results-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Тень таблицы */
+  border-radius: 10px; /* Круглые углы */
+  overflow: hidden; /* Убираем лишние элементы */
+}
+
+#results-table th, #results-table td {
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+  text-align: left;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+#results-table th {
+  background-color: #457b9d;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#results-table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Логотип */
+.dashboard-logo {
+  width: 250px;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  animation: pulse 2s infinite;
+}
+
+/* Анимация логотипа */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Артқа батырмасы */
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 12px 25px;
+  background: linear-gradient(135deg, #d62839, #e63946); /* Градиентный фон */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Тень */
+}
+
+.back-button:hover {
+  background-color: #ff6b6b;
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.back-button:active {
+  background-color: #c53034;
+  transform: scale(0.95);
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Жазылымдарды көру</title>
+  <link rel="stylesheet" href="viewDoctor.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <button class="back-button" onclick="window.history.back()">Артқа</button>
+    </header>
+
+    <main>
+      <!-- Жазылымдар кестесі -->
+      <div class="table-wrapper">
+        <table id="appointments-table">
+          <thead>
+            <tr>
+              <th>Мамандығы</th>
+              <th>Дәрігер</th>
+              <th>Күні</th>
+              <th>Уақыты</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Жазылымдар осында қосылады -->
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Жазылымдарды localStorage-тен жүктеу және кестеге қосу
+    document.addEventListener("DOMContentLoaded", function () {
+      const tableBody = document.querySelector("#appointments-table tbody");
+      const appointments = JSON.parse(localStorage.getItem("appointments")) || [];
+
+      // Әр жазылымды кестеге қосу
+      if (appointments.length > 0) {
+        appointments.forEach((appointment) => {
+          const row = document.createElement("tr");
+          row.innerHTML = `
+            <td>${appointment.specialization}</td>
+            <td>${appointment.doctor}</td>
+            <td>${appointment.date}</td>
+            <td>${appointment.time}</td>
+          `;
+          tableBody.appendChild(row);
+        });
+      } else {
+        // Егер жазылымдар жоқ болса
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td colspan="4" style="text-align: center;">Жазылымдар жоқ</td>
+        `;
+        tableBody.appendChild(row);
+      }
+    });
+  </script>
+</body>
+</html>
+

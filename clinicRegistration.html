@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Емханаға тіркелу</title>
+    <link rel="stylesheet" href="clinicRegistration.css">
+</head>
+<body>
+    <header>
+        <button class="back-button" onclick="window.history.back()">Артқа</button>
+    </header>
+    <header class="dashboard-header">
+  <img src="../images/logo-removebg.png" alt="TynyshMed Logo" class="dashboard-logo">
+</header>
+    <main>
+        <form id="clinic-registration-form">
+            <label for="fullname">Толық аты-жөніңіз:</label>
+            <input type="text" id="fullname" required>
+
+            <label for="birthdate">Туған күніңіз:</label>
+            <input type="date" id="birthdate" required>
+
+            <label for="address">Мекенжай:</label>
+            <input type="text" id="address" required>
+
+            <label for="phone">Телефон нөмірі:</label>
+            <input type="tel" id="phone" required>
+
+         <div style="display: flex; gap: 10px; margin-top: 20px;">
+    <!-- Кнопка "Тіркеу" -->
+    <button type="button" onclick="saveRegistrationData()">Тіркеу</button>
+    <!-- Кнопка "Көру" -->
+    <button type="button" onclick="viewSavedData()">Көру</button>
+</div>
+
+    <script src="clinicRegistration.js"></script>
+</body>
+</html>
+
+
+

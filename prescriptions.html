@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рецепттер</title>
+    <link rel="stylesheet" href="prescriptions.css">
+</head>
+<body>
+    <div class="logo-container">
+    <img src="logo-removebg.png" alt="TynyshMed Logo" class="dashboard-logo">
+  </div>
+    <header>
+        <button class="back-button" onclick="window.history.back()">Артқа</button>
+    </header>
+    <main>
+    <form id="prescription-form">
+        <label for="patientName">Пациенттің аты-жөні:</label>
+        <input type="text" id="patientName" name="patientName" required>
+
+        <label for="medication">Дәрі-дәрмек:</label>
+        <textarea id="medication" name="medication" rows="4" required></textarea>
+
+        <label for="dosage">Дозасы:</label>
+        <input type="text" id="dosage" name="dosage" required>
+
+        <label for="instructions">Қолдану нұсқаулығы:</label>
+        <textarea id="instructions" name="instructions" rows="4" required></textarea>
+
+        <label for="issueDate">Берілген күні:</label>
+        <input type="date" id="issueDate" name="issueDate" required>
+    </form>
+    <!-- Контейнер для кнопок -->
+    <div class="button-container">
+        <button type="submit" form="prescription-form">Сақтау</button>
+        <button id="view-prescriptions" onclick="viewPrescriptions()">Көру</button>
+    </div>
+</main>
+    <script src="prescriptions.js"></script>
+</body>
+</html>
+
+

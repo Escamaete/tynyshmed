@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Бас мәзір</title>
+  <link rel="stylesheet" href="dashboard-styles.css">
+</head>
+<body>
+  <!-- Логотип -->
+  <header class="dashboard-header">
+    <img src="images/logo-removebg.png" alt="TynyshMed Logo" class="dashboard-logo">
+  </header>
+
+  <!-- "Шығу" батырмасы -->
+  <button id="exit-button" class="back-button" onclick="window.location.href='../registration/index.html'">Шығу</button>
+
+  <!-- Негізгі блок -->
+  <div class="dashboard">
+    <!-- Профиль және параметрлер -->
+    <div class="profile-button">
+      <button id="profile-button" onclick="navigateTo('profile')">Профиль</button>
+      <button id="settings-button" onclick="window.location.href='../settings/settings.html'">Параметрлер</button>
+    </div>
+
+    <!-- Негізгі мәзір батырмалары -->
+    <main>
+      <div class="vertical-buttons">
+        <button id="appointment-button" onclick="navigateTo('appointment')">Дәрігерге жазылу</button>
+        <button id="rpn-button" onclick="navigateTo('rpn')">РПН</button>
+        <button id="clinic-reg-button" onclick="navigateTo('clinicRegistration')">Емханаға тіркелу</button>
+        <button id="medical-history-button" onclick="navigateTo('medicalHistory')">Ауру тарихы толтыру</button>
+        <button id="prescriptions-button" onclick="navigateTo('prescriptions')">Рецепт жазу</button>
+        <button id="certificates-button" onclick="navigateTo('references')">Анықтама беру</button>
+      </div>
+    </main>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,165 @@
+/* Общий стиль для body */
+body {
+  margin: 0;
+  font-family: 'Roboto', Arial, sans-serif;
+  background: linear-gradient(135deg, #1d3557, #457b9d, #a8dadc); /* Градиентный фон */
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite; /* Анимация фона */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: white;
+  position: relative;
+  overflow: hidden; /* Чтобы скрыть анимацию */
+}
+
+/* Анимация градиента */
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Кнопки в углах */
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: linear-gradient(135deg, #6e73f8, #4e54c8); /* Градиентный фон */
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4), -5px -5px 15px rgba(255, 255, 255, 0.2); /* Тень */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.back-button:hover {
+  transform: scale(1.1); /* Увеличение */
+  box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.6), -10px -10px 25px rgba(255, 255, 255, 0.3);
+  background: linear-gradient(135deg, #4e54c8, #6e73f8); /* Меняем направление градиента */
+}
+
+/* Основной блок */
+.dashboard {
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.1); /* Полупрозрачный фон */
+  backdrop-filter: blur(15px); /* Размытие заднего фона */
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5), 0 -8px 30px rgba(255, 255, 255, 0.1); /* Двойная тень */
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Анимация блока */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Кнопки профиля */
+.profile-button button {
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #2e2e2e, #1a1a1a); /* Темный черный градиент */
+  box-shadow: 8px 8px 30px rgba(0, 0, 0, 0.7), -8px -8px 30px rgba(255, 255, 255, 0.1); /* Тень */
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.profile-button button:hover {
+  transform: scale(1.05);
+  box-shadow: 12px 12px 40px rgba(0, 0, 0, 0.9), -12px -12px 40px rgba(255, 255, 255, 0.2);
+  background: linear-gradient(135deg, #1a1a1a, #000000); /* Черный при наведении */
+}
+
+/* Вертикальные кнопки */
+.vertical-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.vertical-buttons button {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #6e73f8, #4e54c8); /* Градиент */
+  box-shadow: 8px 8px 30px rgba(0, 0, 0, 0.5), -8px -8px 30px rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.vertical-buttons button:hover {
+  transform: scale(1.08); /* Увеличение */
+  box-shadow: 12px 12px 40px rgba(0, 0, 0, 0.6), -12px -12px 40px rgba(255, 255, 255, 0.3);
+  background: linear-gradient(135deg, #4e54c8, #6e73f8); /* Меняем направление градиента */
+}
+
+/* Логотип в шапке */
+.dashboard-header {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+.dashboard-logo {
+  width: 150px;
+  animation: pulse 2s infinite;
+}
+
+/* Анимация логотипа */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Настройки кнопка */
+.settings-button {
+  background: linear-gradient(135deg, #4CAF50, #34a853);
+  color: white;
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.settings-button:hover {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #34a853, #4CAF50); /* Меняем градиент */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+

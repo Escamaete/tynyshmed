@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Параметрлер</title>
+  <link rel="stylesheet" href="settings-styles.css">
+</head>
+<body>
+  <header>
+  <button class="back-button" onclick="window.history.back()">Артқа</button>
+</header>
+
+  <!-- Логотип -->
+  <div class="logo-container">
+    <img src="../dashboard/images/logo-removebg.png" alt="TynyshMed Logo" class="dashboard-logo">
+  </div>
+
+  <!-- Контейнер параметров -->
+  <div class="settings-container">
+    <div class="settings-block">
+      <button class="settings-button" onclick="window.location.href='../dashboard/savesystem/index.html'">Деректерді көру</button>
+    </div>
+    <!-- Сақталған мәліметтер -->
+    <div class="settings-block">
+      <button class="settings-button" id="saved-data-button" onclick="window.location.href='../savedData/data.html'">Сақталған мәліметтер</button>
+    </div>
+
+    <!-- Кері байланыс -->
+    <div class="settings-block">
+      <button class="settings-button" id="feedback-button" onclick="toggleSection('feedback-section')">Кері байланыс</button>
+      <div class="settings-content" id="feedback-section">
+        <form id="feedback-form">
+          <label for="feedback-name" id="name-label">Атыңыз:</label>
+          <input type="text" id="feedback-name" placeholder="Атыңызды енгізіңіз" required>
+          
+          <label for="feedback-phone" id="phone-label">Телефон нөміріңіз:</label>
+          <input type="tel" id="feedback-phone" placeholder="+7 777 777 77 77" pattern="^\+?[0-9\s\-]+$" required>
+          
+          <label for="feedback-email" id="email-label">Электрондық пошта:</label>
+          <input type="email" id="feedback-email" placeholder="Электрондық поштаңызды енгізіңіз" required>
+          
+          <label for="feedback-message" id="message-label">Хабарлама:</label>
+          <textarea id="feedback-message" placeholder="Хабарламаңызды жазыңыз" rows="4" required></textarea>
+          
+          <button type="submit" class="feedback-button" id="submit-button">Жіберу</button>
+        </form>
+        <div id="feedback-status"></div>
+      </div>
+    </div>
+  </div>
+  <script src="settings.js"></script>
+</body>
+</html>

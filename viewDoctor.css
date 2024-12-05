@@ -1,0 +1,91 @@
+/* Дененің фоны мен градиенті */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1d3557, #457b9d, #a8dadc); /* Градиент фоны */
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite; /* Анимация */
+  margin: 0;
+  color: #333;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Контейнер стилі */
+.container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.9); /* Жартылай мөлдір ақ фон */
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Заголовок */
+h1 {
+  text-align: center;
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Артқа батырмасы */
+.back-button {
+  padding: 10px 20px;
+  background-color: #457b9d;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #2a6f85;
+}
+
+/* Кесте стилі */
+.table-wrapper {
+  overflow-x: auto; /* Ұзын кесте үшін скролл */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 16px;
+  text-align: left;
+}
+
+thead tr {
+  background-color: #457b9d;
+  color: #ffffff;
+}
+
+th, td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f3f3f3;
+}
+
+tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+td {
+  color: #333;
+}
+
+/* Ешқандай жазылым болмағанда */
+td[colspan="4"] {
+  text-align: center;
+  font-style: italic;
+  color: #999;
+}

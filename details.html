@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Толығырақ ақпарат</title>
+  <link rel="stylesheet" href="details-styles.css">
+</head>
+<body>
+  <header class="dashboard-header">
+    <img src="../images/logo-removebg.png" alt="TynyshMed Logo" class="dashboard-logo">
+  </header>
+  <div class="container">
+    <header>
+      <button class="back-button" onclick="window.history.back()">Артқа</button>
+    </header>
+    <main id="details-section">
+      <!-- Данные загрузятся через JavaScript -->
+    </main>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const detailsSection = document.getElementById('details-section');
+      const person = JSON.parse(localStorage.getItem('selectedPerson'));
+
+      if (person) {
+        detailsSection.innerHTML = `
+          <div class="details-card">
+            <h1>${person.name}</h1>
+            <p><strong>ИИН:</strong> ${person.iin}</p>
+            <p><strong>Туған жылы:</strong> ${person.birthYear}</p>
+            <p><strong>Мекенжай:</strong> ${person.address}</p>
+            <p><strong>Тіркелген поликлиника:</strong> ${person.clinic}</p>
+            <div class="history">
+              <h2>Емдеу тарихы:</h2>
+              <ul>
+                ${person.history && person.history.length > 0
+                  ? person.history.map(item => `<li>${item}</li>`).join('')
+                  : '<li>Тарих жоқ</li>'
+                }
+              </ul>
+            </div>
+          </div>
+        `;
+      } else {
+        detailsSection.innerHTML = '<p>Ақпарат табылмады.</p>';
+      }
+    });
+  </script>
+</body>
+</html>

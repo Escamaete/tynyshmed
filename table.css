@@ -1,0 +1,125 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background: linear-gradient(135deg, #a8dadc, #457b9d);
+    color: #333;
+}
+
+.header {
+    background: #1d3557;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-out;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background: #1d3557;
+    color: white;
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background: #f7f9fc;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: #f1f1f1;
+}
+/* Базалық стиль */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #457b9d;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Кері оралу батырмасының арнайы стилі */
+.back-btn {
+    background-color: #1d3557;
+    padding: 12px 25px;
+    font-size: 18px;
+    border: 2px solid transparent;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    transition: 0.4s ease-in-out;
+}
+
+.back-btn .back-icon {
+    font-size: 20px;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Hover эффект */
+.back-btn:hover {
+    background-color: white;
+    color: #1d3557;
+    border: 2px solid #1d3557;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.back-btn:hover .back-icon {
+    transform: translateX(-5px);
+}
+
+/* Active эффект */
+.back-btn:active {
+    transform: scale(0.98);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Кері оралу батырмасының қосымша анимациясы */
+.back-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    z-index: 0;
+    transition: width 0.3s ease-in-out;
+}
+
+.back-btn:hover::before {
+    width: 100%;
+}
+
+.back-btn span {
+    position: relative;
+    z-index: 1;
+}

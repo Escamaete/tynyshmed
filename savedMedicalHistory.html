@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сақталған Ауру Тарихы</title>
+    <link rel="stylesheet" href="savedMedicalHistory.css">
+</head>
+<body>
+    <header>
+        <button class="back-button" onclick="window.history.back()">Артқа</button>
+    </header>
+    <main>
+        <div class="table-wrapper">
+            <table id="history-table">
+                <thead>
+                    <tr>
+                        <th>Пациенттің аты-жөні</th>
+                        <th>Диагноз</th>
+                        <th>Ем-шаралар</th>
+                        <th>Күні</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Сақталған деректер JavaScript арқылы қосылады -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const tableBody = document.querySelector("#history-table tbody");
+
+            // LocalStorage-тен ауру тарихын жүктеу
+            const histories = JSON.parse(localStorage.getItem("medicalHistories")) || [];
+
+            // Егер деректер болса, кестеге қосу
+            if (histories.length > 0) {
+                histories.forEach(history => {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                        <td>${history.patientName}</td>
+                        <td>${history.diagnosis}</td>
+                        <td>${history.treatment}</td>
+                        <td>${history.visitDate}</td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            } else {
+                // Егер деректер жоқ болса, хабарлама көрсету
+                const row = document.createElement("tr");
+                row.innerHTML = `<td colspan="4" style="text-align: center;">Сақталған ауру тарихы жоқ</td>`;
+                tableBody.appendChild(row);
+            }
+        });
+    </script>
+</body>
+</html>
+

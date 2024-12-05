@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сақталған деректер</title>
+    <link rel="stylesheet" href="viewRegistration.css">
+</head>
+<body>
+    <header>
+        <button class="back-button" onclick="window.history.back()">Артқа</button>
+    </header>
+    <main>
+        <div class="table-wrapper">
+            <table id="dataTable">
+                <thead>
+                    <tr>
+                        <th>Толық аты-жөніңіз</th>
+                        <th>Туған күні</th>
+                        <th>Мекенжай</th>
+                        <th>Телефон нөмірі</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Деректер JavaScript арқылы қосылады -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <script>
+        // Функция деректерді LocalStorage-тан көрсету үшін
+        function loadData() {
+            const data = JSON.parse(localStorage.getItem("clinicReg")) || [];
+            const tableBody = document.querySelector("#dataTable tbody");
+            tableBody.innerHTML = ""; // Кестені жаңартпас бұрын тазарту
+
+            if (data.length === 0) {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td colspan="4" style="text-align: center;">Сақталған деректер жоқ</td>
+                `;
+                tableBody.appendChild(row);
+                return;
+            }
+
+            data.forEach((record) => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${record.fullname}</td>
+                    <td>${record.birthdate}</td>
+                    <td>${record.address}</td>
+                    <td>${record.phone}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        // Бет жүктелген кезде деректерді жүктеу
+        document.addEventListener("DOMContentLoaded", loadData);
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сақталған анықтамалар</title>
+    <link rel="stylesheet" href="viewCertificates.css">
+</head>
+<body>
+    <header>
+        <button class="back-button" onclick="window.history.back()">Артқа</button>
+    </header>
+    <main>
+        <table id="dataTable" border="1">
+            <thead>
+                <tr>
+                    <th>Толық аты-жөні</th>
+                    <th>Анықтама түрі</th>
+                    <th>Берілген күні</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </main>
+    <script>
+        // Загрузка данных из LocalStorage
+        document.addEventListener("DOMContentLoaded", () => {
+            const data = JSON.parse(localStorage.getItem("certificates")) || [];
+            const tableBody = document.querySelector("#dataTable tbody");
+
+            data.forEach((item) => {
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${item.name}</td>
+                    <td>${item.type}</td>
+                    <td>${item.date}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        });
+    </script>
+</body>
+</html>

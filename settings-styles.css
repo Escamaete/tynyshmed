@@ -1,0 +1,177 @@
+/* Негізгі стильдер */
+body {
+  margin: 0;
+  font-family: 'Roboto', Arial, sans-serif;
+  background: linear-gradient(135deg, #1d3557, #457b9d, #a8dadc);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: white;
+}
+
+/* Параметрлер контейнері */
+.settings-container {
+  max-width: 600px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Тақырып */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+/* Блоктар */
+.settings-block {
+  margin-bottom: 15px;
+}
+
+/* Батырма стильдері */
+.settings-button {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #6e73f8, #4e54c8);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.settings-button:hover {
+  background: linear-gradient(135deg, #4e54c8, #6e73f8);
+  transform: scale(1.05);
+}
+
+/* Қосымша мазмұн (ашылатын/жабылатын бөлімдер) */
+.settings-content {
+  display: none;
+  margin-top: 10px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+.settings-content label {
+  display: block;
+  margin-bottom: 5px;
+  color: white;
+}
+
+/* Форма элементтері */
+.settings-content select,
+.settings-content input,
+.settings-content textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* Қосымша батырмалар */
+.settings-content button {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.settings-content button:hover {
+  background: linear-gradient(135deg, #45a049, #4CAF50);
+}
+/* Центрирование логотипа */
+.logo-container {
+  text-align: center; /* Центрирует логотип по горизонтали */
+  margin-bottom: 0; /* Добавляет отступ под логотипом */
+}
+
+.dashboard-logo {
+  width: 190px; /* Устанавливаем ширину логотипа */
+  height: auto; /* Сохраняем пропорции */
+  display: inline-block; /* Чтобы логотип корректно центрировался */
+}
+
+/* Центрирование всей страницы с подъемом вверх */
+body {
+   margin: -80px auto 30px auto; /* Поднимаем блок выше */
+  font-family: 'Roboto', Arial, sans-serif;
+  background: linear-gradient(135deg, #1d3557, #457b9d, #a8dadc);
+  display: flex;
+  flex-direction: column; /* Выстраиваем элементы вертикально */
+  align-items: center; /* Центрируем элементы по горизонтали */
+  justify-content: flex-start; /* Смещаем элементы вверх */
+  min-height: 100vh;
+  padding-top: 50px; /* Отступ сверху для поднятия */
+  color: white;
+}
+
+/* Центрирование логотипа */
+.logo-container {
+  text-align: center;
+  margin-bottom: 20px; /* Отступ под логотипом */
+}
+
+.dashboard-logo {
+  width: 250px; /* Размер логотипа */
+  height: auto; /* Сохраняем пропорции */
+  display: inline-block;
+}
+
+/* Контейнер параметров */
+.settings-container {
+  max-width: 550px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  margin-top: 10px; /* Дополнительный отступ для подъемов */
+}
+/* Артқа батырмасы */
+.back-button {
+  position: absolute; /* Батырма экранның үстіңгі сол жақ бұрышында */
+  top: 20px; /* Жоғарыдан қашықтық */
+  left: 20px; /* Сол жақтан қашықтық */
+  padding: 10px 20px; /* Батырманың өлшемі */
+  background-color: #e63946; /* Қызыл түс */
+  color: #fff; /* Ақ мәтін */
+  border: none; /* Шекара жоқ */
+  border-radius: 5px; /* Бұрыштарды дөңгелектеу */
+  font-size: 16px; /* Мәтіннің өлшемі */
+  font-weight: bold; /* Қалың мәтін */
+  cursor: pointer; /* Сілтемеге ұқсас курсор */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Жұмсақ анимация */
+}
+
+.back-button:hover {
+  background-color: #ff6b6b; /* Жұмсақ қызыл түс */
+  transform: scale(1.05); /* Нақтырақ эффект */
+}
+
+.back-button:active {
+  background-color: #c53034; /* Батырма басылған кездегі түс */
+  transform: scale(0.95); /* Басылған кездегі эффект */
+}
+
+
+

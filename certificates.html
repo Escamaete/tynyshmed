@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анықтама тіркеу</title>
+    <link rel="stylesheet" href="certificates.css">
+</head>
+<body>
+    <header class="dashboard-header">
+  <img src="../images/logo-removebg.png" alt="TynyshMed Logo" class="dashboard-logo">
+</header>
+    <header>
+        <button class="back-button" onclick="window.history.back()">Артқа</button>
+    </header>
+    <main>
+        <form id="certificates-form">
+            <label for="name">Толық аты-жөніңіз:</label>
+            <input type="text" id="name" required>
+
+            <label for="type">Анықтама түрі:</label>
+            <input type="text" id="type" required>
+
+            <label for="date">Берілген күні:</label>
+            <input type="date" id="date" required>
+
+            <div style="display: flex; gap: 10px; margin-top: 20px;">
+                <button type="button" onclick="saveCertificateData()">Тіркеу</button>
+                <button type="button" onclick="viewSavedCertificates()">Көру</button>
+            </div>
+        </form>
+    </main>
+    <script src="certificates.js"></script>
+</body>
+</html>
+

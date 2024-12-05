@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>РПН Іздеу</title>
+  <link rel="stylesheet" href="rpn-styles.css">
+</head>
+<body>
+  <header class="dashboard-header">
+    <img src="../images/logo-removebg.png" alt="TynyshMed Logo" class="dashboard-logo">
+  </header>
+  <div class="container">
+    <header>
+  <button class="back-button" onclick="window.history.back()">Артқа</button>
+</header>
+    <main>
+      <section class="search-section">
+        <form onsubmit="searchPerson(event)">
+          <label for="search-input">ИИН немесе Аты:</label>
+          <div class="input-container">
+            <input type="text" id="search-input" placeholder="ИИН немесе Аты енгізіңіз">
+            <button type="submit" class="search-button">Іздеу</button>
+          </div>
+        </form>
+      </section>
+      <section id="results" class="results-section">
+        <table id="results-table">
+          <thead>
+            <tr>
+              <th>ИИН</th>
+              <th>Аты-жөні</th>
+              <th>Туған жылы</th>
+              <th>Мекенжай</th>
+              <th>Поликлиника</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Результаты поиска появятся здесь -->
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+  <script src="rpn.js"></script>
+</body>
+</html>

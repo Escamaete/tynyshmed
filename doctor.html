@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Дәрігерге жазылу</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="dashboard-header">
+    <img src="logo-removebg.png" alt="TynyshMed Logo" class="dashboard-logo">
+  </header>
+  <div class="container">
+    <header>
+      <button class="back-button" onclick="window.history.back()">Артқа</button>
+    </header>
+
+    <main>
+      <form id="appointment-form">
+        <div class="form-group">
+          <label for="specialization">Мамандығы:</label>
+          <select id="specialization" required>
+            <option value="" disabled selected>Мамандықты таңдаңыз</option>
+            <option value="therapist">Терапевт</option>
+            <option value="pediatrician">Педиатр</option>
+            <option value="cardiologist">Кардиолог</option>
+            <option value="dentist">Тіс дәрігері</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="doctor">Дәрігер:</label>
+          <select id="doctor" required>
+            <option value="" disabled selected>Алдымен мамандықты таңдаңыз</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="appointment-date">Күні:</label>
+          <input type="date" id="appointment-date" required>
+        </div>
+
+        <div class="form-group">
+          <label for="appointment-time">Уақыты:</label>
+          <input type="time" id="appointment-time" required>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" onclick="saveAppointment()">Жазылу</button>
+          <a href="viewDoctor.html"><button type="button">Көру</button></a>
+        </div>
+      </form>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

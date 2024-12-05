@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ауру тарихы</title>
+    <link rel="stylesheet" href="medicalHistory.css">
+</head>
+<body>
+     <header class="dashboard-header">
+  <img src="../images/logo-removebg.png" alt="TynyshMed Logo" class="dashboard-logo">
+</header>
+    <header>
+        <button class="back-button" onclick="window.history.back()">Артқа</button>
+    </header>
+    <main>
+        <form id="medical-history-form">
+            <label for="patientName">Пациенттің аты-жөні:</label>
+            <input type="text" id="patientName" name="patientName" required>
+
+            <label for="diagnosis">Диагноз:</label>
+            <textarea id="diagnosis" name="diagnosis" rows="4" required></textarea>
+
+            <label for="treatment">Ем-шаралар:</label>
+            <textarea id="treatment" name="treatment" rows="4" required></textarea>
+
+            <label for="visitDate">Күні:</label>
+            <input type="date" id="visitDate" name="visitDate" required>
+        </form>
+        <div class="button-container">
+            <button type="submit" form="medical-history-form">Сақтау</button>
+            <button id="view-history" onclick="viewHistory()">Көру</button>
+        </div>
+        <div id="success-message" style="display:none;">
+            <p>Ауру тарихы сәтті сақталды!</p>
+        </div>
+    </main>
+    <script src="medicalHistory.js"></script>
+</body>
+</html>
+

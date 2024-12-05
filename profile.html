@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Профиль</title>
+  <link rel="stylesheet" href="profile-styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+   <header class="dashboard-header">
+  <img src="../images/logo-removebg.png" alt="TynyshMed Logo" class="dashboard-logo">
+</header>
+  <div class="profile-container">
+    <header>
+      <button class="back-button" onclick="window.location.href='../dashboard.html'">Артқа</button>
+      <h1>Менің профилім</h1>
+    </header>
+    <main>
+       <section class="profile-details">
+        <!-- Фото профиля -->
+        <div class="profile-picture-container">
+          <img src="https://via.placeholder.com/150" alt="Профиль суреті" id="profile-picture" class="profile-picture" onclick="document.getElementById('upload-photo').click()">
+        </div>
+        <input type="file" id="upload-photo" accept="image/*" style="display: none;" onchange="updateProfilePicture(event)">
+        
+        <!-- Данные пользователя -->
+        <div id="profile-info">
+          <h2 id="profile-name">Қолданушының аты</h2>
+          <p id="profile-iin">ИИН: 123456789012</p>
+          <p id="profile-email">Электрондық пошта: user@example.com</p>
+        </div>
+
+        <!-- Форма редактирования -->
+        <div id="edit-profile-form" style="display: none;">
+          <input type="text" id="edit-name" placeholder="Аты-жөніңіз" value="Қолданушының аты">
+          <input type="text" id="edit-iin" placeholder="ИИН" value="123456789012">
+          <input type="email" id="edit-email" placeholder="Электрондық пошта" value="user@example.com">
+          <button class="save-button" onclick="saveProfile()">Сақтау</button>
+          <button class="cancel-button" onclick="cancelEdit()">Болдырмау</button>
+        </div>
+      </section>
+      <section class="profile-actions">
+        <button class="edit-button" onclick="editProfile()">Профильді өзгерту</button>
+        <button class="logout-button" onclick="logout()">Шығу</button>
+      </section>
+    </main>
+  </div>
+  <script src="profile.js"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+/* Общий стиль для body */
+body {
+  margin: 0;
+  font-family: 'Roboto', Arial, sans-serif;
+  background: linear-gradient(135deg, #1d3557, #457b9d, #a8dadc);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin-top: 30px; /* Регулируемый отступ сверху */
+}
+
+/* Контейнер профиля */
+.profile-container {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Заголовок */
+header h1 {
+  font-size: 28px;
+  color: white;
+}
+
+/* Фото профиля */
+.profile-picture-container {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.profile-picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.change-photo-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 12px;
+  text-align: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.profile-picture-container:hover .change-photo-overlay {
+  opacity: 1;
+}
+
+/* Редактирование профиля */
+#edit-profile-form input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  color: black;
+}
+
+/* Кнопки */
+button {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  background: linear-gradient(135deg, #333, #000);
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Сохранить и отменить */
+.save-button {
+  background: linear-gradient(135deg, #6e73f8, #4e54c8);
+}
+
+.cancel-button {
+  background: linear-gradient(135deg, #6e73f8, #4e54c8);
+}
+/* Шапка с логотипом */
+.dashboard-header {
+    position: absolute; /* Фиксированное положение */
+    top: 0;
+    left: 50%; /* Центровка по горизонтали */
+    transform: translateX(-50%); /* Смещение на половину ширины */
+    padding: 10px 100;
+    z-index: 1000; /* Поверх других элементов */
+}
+.dashboard-logo {
+  width: 250px; /* Задайте ширину */
+  height: auto; /* Пропорциональная высота */
+  display: block;
+  margin:  auto;
+}
+
